@@ -8,7 +8,7 @@ var cheerio = require("cheerio");
 
 var db = require("./models");
 
-var PORT = 3000 || process.env.PORRT;
+var PORT = 3000 || process.env.PORT;
 
 var app = express();
 
