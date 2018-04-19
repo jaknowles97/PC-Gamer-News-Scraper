@@ -128,6 +128,6 @@ app.post("/articles/:id", function(req, res) {
 });
 
 // Start the server
-app.listen(PORT, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("App running on port " + PORT + "!");
 });
