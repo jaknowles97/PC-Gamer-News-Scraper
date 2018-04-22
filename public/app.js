@@ -32,12 +32,12 @@ $(document).on("click", "p", function() {
         $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
   
         // If there's a note in the article
-        if (data.note) {
-          // Place the title of the note in the title input
-          $("#titleinput").val(data.note.title);
-          // Place the body of the note in the body textarea
-          $("#bodyinput").val(data.note.body);
+        console.log(data);
+        let notesHTML = "<section class='noteTable'><h3>What the people have to say</h3>";
+        for(var i = 0; i < data.notes.length; i++) {
+          notesHTML += "<div class='comment'><h4>"+ data.notes[i].title+ "</h4><p>"+ data.notes[i].body+ "</p></div>";
         }
+        $("#notes").prepend(notesHTML);
       });
   });
   
@@ -48,7 +48,7 @@ $(document).on("click", "p", function() {
   
     // Run a POST request to change the note, using what's entered in the inputs
     $.ajax({
-        
+
       method: "POST",
       url: "/articles/" + thisId,
       data: {

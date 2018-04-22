@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Scraping With Mongoose</title>
     <style>
-      body { background-color: #F2F6D0 }
+      body { background-color: lightgreen; }
       #wrapper {
         width: 960px;
         margin-left: auto;
@@ -20,6 +20,17 @@
       #notes {
         float: right;
         width: 30%;
+      }
+      .noteTable {
+        background-color: whitesmoke;
+        color: #444;
+        padding: 10px;
+        border: 3px solid black;
+      }
+      .comment {
+        background-color: lightblue;
+        padding: 3px;
+        margin-bottom: 5px;
       }
       textarea, input {
         display: block;
@@ -38,10 +49,12 @@
   </head>
   <body>
     <div id="wrapper">
-      <h1>Note Scraper</h1>
-      <h2><i>If you can do this...the homework should be no problem.</i></h2>
+      <h1>PC GAMER NEWS SCRAPER</h1>
+      <h2><i>be part of the peanut gallery..</i></h2>
       <div id="articles"></div>
-      <div id="notes"></div>
+      <div id="notes">
+        <h1>Click on the title of a Article to see the comments and add your own!</h1>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
