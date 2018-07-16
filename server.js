@@ -35,8 +35,11 @@ app.get("/scrape", function(req, res) {
       var result = {};
       // Grab the article information and place it in the result object
       result.title = $(this)
-        .children()
-        .text();
+        .children("a")
+        .children("article")
+        .children("div")
+        .children("header")
+        .children("h3");
       result.link = $(this)
         .children("a")
         .attr("href");
