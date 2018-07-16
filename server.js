@@ -39,7 +39,17 @@ app.get("/scrape", function(req, res) {
         .children("article")
         .children("div")
         .children("header")
-        .children("h3");
+        .children("h3")
+        .text();
+      result.author = $(this)
+        .children("a")
+        .children("article")
+        .children("div")
+        .children("header")
+        .children("p")
+        .children("span")
+        .children("span")
+        .text();
       result.link = $(this)
         .children("a")
         .attr("href");
