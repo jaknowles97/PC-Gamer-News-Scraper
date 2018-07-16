@@ -6,13 +6,16 @@ $.getJSON("/articles", function(data) {
       $("#articles").append(
           `<div data-id= ${data[i]._id} > <h3> ${data[i].title} </h3>
             <a href=' ${data[i].link}'> click to go to source </a>
+            <p> ${data[i].author} </p>
           </div>`);
     }
   });
 
 
 // Whenever someone clicks a p tag
-$(document).on("click", "p", function() {
+$(document).on("click", "div", function(e) {
+    // stopPropagation prevents the click handler bubbling
+    e.stopPropagation();
     // Empty the notes from the note section
     $("#notes").empty();
     // Save the id from the p tag
