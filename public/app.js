@@ -4,7 +4,7 @@ $.getJSON("/articles", function(data) {
       // Display the apropos information on the page
       // $("#articles").append("<div data-id='" + data[i]._id + "'>" + data[i].title + "<a href='" + data[i].link + "'>click here to view source<a/></div>");
       $("#articles").append(
-          `<div data-id= ${data[i]._id} > <h3> ${data[i].title} </h3>
+          `<div class='article' data-id= ${data[i]._id} > <h3> ${data[i].title} </h3>
             <a href=' ${data[i].link}'> click to go to source </a>
             <p> ${data[i].author} </p>
           </div>`);
@@ -12,10 +12,8 @@ $.getJSON("/articles", function(data) {
   });
 
 
-// Whenever someone clicks a p tag
-$(document).on("click", "div", function(e) {
-    // stopPropagation prevents the click handler bubbling
-    e.stopPropagation();
+
+$(document).on("click", ".article", function(e) {
     // Empty the notes from the note section
     $("#notes").empty();
     // Save the id from the p tag
