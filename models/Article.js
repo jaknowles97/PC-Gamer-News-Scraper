@@ -28,6 +28,11 @@ var ArticleSchema = new Schema({
       required: true,
       unique: true
   },
+  time: {
+    type: String,
+    required: false,
+    unique: false
+  },
   img: {
     type: String,
     required: false

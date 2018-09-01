@@ -59,6 +59,13 @@ app.get("/scrape", function(req, res) {
         .children("div")
         .children("p")
         .text();
+      result.time = $(this)
+        .children("a")
+        .children("article")
+        .children("div")
+        .children("p")
+        .children("time")
+        .attr("datetime");
       result.img = $(this)
         .children("a")
         .children("article")
@@ -78,6 +85,7 @@ app.get("/scrape", function(req, res) {
     res.send("Scrape Complete");
   });
 });
+
 
 // Route for getting all Articles from the db
 app.get("/articles", function(req, res) {

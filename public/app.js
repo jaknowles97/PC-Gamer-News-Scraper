@@ -1,4 +1,4 @@
-$.getJSON("/articles", function(data) {
+$.get("/articles", function(data) {
     // For each one
     for (var i = 0; i < data.length; i++) {
       // Display the apropos information on the page
@@ -13,7 +13,7 @@ $.getJSON("/articles", function(data) {
 
 
 
-$(document).on("click", ".article", function(e) {
+$(document).on("click", ".article", function() {
     // Empty the notes from the note section
     $("#notes").empty();
     // Save the id from the p tag
